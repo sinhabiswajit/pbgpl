@@ -123,7 +123,7 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Expanded(
                     child: Container(
-                      padding: EdgeInsets.symmetric(
+                      padding: const EdgeInsets.symmetric(
                           horizontal: 16.0, vertical: 16.0),
                       decoration: BoxDecoration(
                         color: Colors.green[200], // Background color
@@ -151,13 +151,13 @@ class _HomePageState extends State<HomePage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    _buildInputField('Name', _firstNameController),
+                    _buildInputField('Applicant\'s Name*', _firstNameController),
                     const SizedBox(height: 10.0),
                     Row(
                       children: <Widget>[
                         Expanded(
                           child: _buildInputField(
-                              'Phone Number', TextEditingController(),
+                              'Phone Number*', TextEditingController(),
                               keyboardType: TextInputType.phone),
                         ),
                         const SizedBox(width: 10.0),
@@ -208,7 +208,7 @@ class _HomePageState extends State<HomePage> {
                     _buildLocationDropdown(context),
                     const SizedBox(height: 10.0),
                     _buildInputField(
-                        "Father's/Husband's Name", TextEditingController()),
+                        "Father's/Husband's Name*", TextEditingController()),
                     const SizedBox(height: 10.0),
                     _buildGasTypeDropdown(context),
                     const SizedBox(height: 10.0),
@@ -384,11 +384,11 @@ class _HomePageState extends State<HomePage> {
                     child: TextFormField(
                       controller: otpControllers[index],
                       focusNode: otpFocusNodes[index],
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         border: OutlineInputBorder(),
                       ),
                       keyboardType: TextInputType.number,
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.black,
                         fontSize: 16.0, // Adjust the font size as needed
                       ),
@@ -403,7 +403,7 @@ class _HomePageState extends State<HomePage> {
                   );
                 }),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10.0,
               ),
               ElevatedButton(
@@ -417,7 +417,7 @@ class _HomePageState extends State<HomePage> {
                     Colors.green,
                   ), // Set the background color to green
                 ),
-                child: Text('Verify'),
+                child: const Text('Verify'),
               ),
             ],
           ),
@@ -449,6 +449,7 @@ class _HomePageState extends State<HomePage> {
         ),
         labelStyle: const TextStyle(
           fontSize: 16.0,
+          color:Colors.green,
         ),
       ),
       validator: validator,
@@ -459,7 +460,7 @@ class _HomePageState extends State<HomePage> {
   Widget _buildLocationDropdown(BuildContext context) {
     return DropdownButtonFormField<String>(
       decoration: InputDecoration(
-        labelText: "Location",
+        labelText: "Location*",
         border: const OutlineInputBorder(
           borderRadius: BorderRadius.all(
             Radius.circular(8.0),
@@ -511,7 +512,7 @@ class _HomePageState extends State<HomePage> {
   Widget _buildGasTypeDropdown(BuildContext context) {
     return DropdownButtonFormField<String>(
       decoration: InputDecoration(
-        labelText: "Gas Type",
+        labelText: "Gas Type*",
         border: const OutlineInputBorder(
           borderRadius: BorderRadius.all(
             Radius.circular(8.0),
